@@ -1,11 +1,12 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>spa</mat-icon>
+<mat-toolbar class="colorGreen" color="danger">
+  <button [routerLink]="['']" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon >spa</mat-icon>
   </button>
-  <span>MyGreen App</span>
+  <a href="/" class="colorGreen">MyGreen App</a>
+  <a class="me-3 colorGreen learn-btn" mat-raised-button href="/">Learning-How</a>
   <span class="example-spacer"></span>
-  <a mat-raised-button class="me-3"  href="/login">Login</a>
-	<a mat-raised-button href="/signup">Signup</a>
+  <a class="me-3 colorGreen" mat-raised-button href="/login">Login</a>
+	<a class="colorGreen" mat-raised-button href="/signup">Signup</a>
 </mat-toolbar>
 
 

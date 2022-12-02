@@ -1,4 +1,56 @@
-mat-grid-tile {
-  background: lightblue;
+
+.mat-card-home{
+  position: sticky;
+  top: 10vh;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 5vh 0 5vh 0
 }
+
+.mat-card-home2{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  margin-top: 50vh;
+ /* margin-left: 10vw;
+  margin-right: 10vw;
+
+  margin-bottom: 13vw;*/
+}
+
+.mat-card-title{
+  padding-bottom: 100px;
+
+}
+
+
+.tips-button{
+  background-color: rgb(108, 162, 108);
+  width: 150px !important;
+  height: 150px !important;
+  margin-left: 3vw;
+}
+
+a{
+  color: azure;
+  font-size:medium;
+}
+
+.buttons-container{
+
+  margin-top: 45vh;
+  text-align: center;
+}
+
+.tips-button{
+  flex: 1 1 auto;
+}
+
+
+
 
