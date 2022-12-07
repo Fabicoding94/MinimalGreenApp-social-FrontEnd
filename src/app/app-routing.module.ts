@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ForumComponent } from './component/forum/forum.component';
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import { SaveCO2Component } from './component/save-co2/save-co2.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'reduceCO2', component: SaveCO2Component },
   { path: 'sustainableDiet', component: SaveDietComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
+  { path: 'signup', component: SignupComponent},
+  { path: 'forum', component: ForumComponent},
 
 ];
 

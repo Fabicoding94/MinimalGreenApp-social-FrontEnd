@@ -5,7 +5,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
+
+
 import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule} from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +27,11 @@ import { SaveWaterComponent } from './component/save-water/save-water.component'
 import { SaveElectricityComponent } from './component/save-electricity/save-electricity.component';
 import { SaveCO2Component } from './component/save-co2/save-co2.component';
 import { SaveDietComponent } from './component/save-diet/save-diet.component';
+import { SignupComponent } from './component/signup/signup.component';
+
+import { PostComponent } from './main/post/post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ForumComponent } from './component/forum/forum.component';
 
 
 
@@ -24,12 +39,15 @@ import { SaveDietComponent } from './component/save-diet/save-diet.component';
     declarations: [
         AppComponent,
         LoginComponent,
+        SignupComponent,
         HeaderComponent,
         HomeComponent,
         SaveWaterComponent,
         SaveElectricityComponent,
         SaveCO2Component,
-        SaveDietComponent
+        SaveDietComponent,
+        PostComponent,
+        ForumComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -42,7 +60,16 @@ import { SaveDietComponent } from './component/save-diet/save-diet.component';
         MatButtonModule,
         MatGridListModule,
         MatCardModule,
-        SwiperModule
+        MatDialogModule,
+        MatMenuModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        ReactiveFormsModule,
+        FormsModule,
+        SwiperModule,
+
 
 
 

@@ -1,1 +1,50 @@
-<p>signup works!</p>
+<div class="center-content">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Sign-Up</mat-card-title>
+    </mat-card-header>
+      <form action="">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Name and Surname</mat-label>
+          <input type="name" name="name" formControlName="name" matInput placeholder="Mario Rossi">
+          <mat-hint  style="color: red ;">*Complete name is required</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input type="username" name="username" formControlName="username" matInput placeholder="Mario90">
+          <mat-hint  style="color: red ;">*Username is required</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="email" name="email" formControlName="email" matInput placeholder="mario@mario.com">
+          <mat-hint  style="color: red ;">*Email is required</mat-hint>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input type="password" name="password" formControlName="password" matInput placeholder="password">
+          <mat-hint  style="color: red ;">*Password is required</mat-hint>
+        </mat-form-field>
+
+
+      </form>
+
+
+
+      <div class="foot-form" >
+        <button   mat-raised-button >Register me!</button>
+        <h5 class="mt-3 ms-2 fw-normal"> If you already have an account,
+          <a type="submit" href="../login" style="color:rgb(117, 174, 96) ;" >Login!</a>
+        </h5>
+      </div>
+
+
+
+  </mat-card>
+
+
+</div>

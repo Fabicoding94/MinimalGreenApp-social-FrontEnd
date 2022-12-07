@@ -1,1 +1,41 @@
-<p>login works!</p>
+<div class="center-content">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+      <form [formGroup]="form" (submit)="login()" action="">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="email" name="email" formControlName="email" matInput placeholder="mario@mario.com">
+          <mat-hint  style="color: red ;">*Email is required</mat-hint>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input type="password" name="password" formControlName="password" matInput placeholder="password">
+          <mat-hint  style="color: red ;">*Password is required</mat-hint>
+        </mat-form-field>
+
+        <label *ngIf="formIsValid == false" class="text-danger">*Form is invalid</label>
+
+
+      </form>
+
+
+
+      <div class="foot-form" >
+        <button   mat-raised-button >Login</button>
+        <h5 class="mt-3 ms-2 fw-normal"> If you don't have an account, please
+          <a type="submit" href="../signup" style="color:rgb(117, 174, 96) ;" >Sign-up!</a>
+        </h5>
+      </div>
+
+
+
+  </mat-card>
+
+
+</div>
+
+
