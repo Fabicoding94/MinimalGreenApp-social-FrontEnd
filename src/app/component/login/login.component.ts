@@ -12,6 +12,48 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
+  flag: boolean = true;
+
+  constructor(private builder: FormBuilder, private authSvc: AuthService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.form = this.builder.group({
+      username: [null,[Validators.required]],
+      password: [null, [Validators.required, Validators.minLength(4)]],
+    });
+  }
+
+  login() {
+
+    this.authSvc.login(this.form.value)
+    .subscribe({
+      next: res => {
+      console.log(res)
+      this.authSvc.saveAccessData(res)
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Welome to our Forum',
+        showConfirmButton: false,
+        timer: 3000
+      })
+      },
+      complete: () => this.router.navigate(['/forum'])
+      ,
+        error: error => {
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'This user does not exist',
+            showConfirmButton: true,
+            timer: 3000
+          })
+        }
+      })
+  }
+}
+
+/* form: FormGroup = new FormGroup({});
   formIsValid!: boolean;
 
   constructor(private builder: FormBuilder, private authSrv: AuthService, private router:Router) { }
@@ -42,5 +84,4 @@ export class LoginComponent implements OnInit {
           })
         }
       })
-  }
-}
+  }*/

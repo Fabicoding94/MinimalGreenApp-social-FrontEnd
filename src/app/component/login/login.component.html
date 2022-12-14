@@ -1,33 +1,32 @@
 <div class="center-content">
   <mat-card class="example-card">
+
     <mat-card-header>
       <mat-card-title>Login to our GreenForum!</mat-card-title>
     </mat-card-header>
-      <form [formGroup]="form" (submit)="login()" autocomplete="off">
+
+      <form [formGroup]="form"  >
+
         <mat-form-field appearance="outline">
           <mat-label>Username:</mat-label>
-          <input matInput type="username" name="username" formControlName="username"  placeholder="your username...">
-          <mat-error *ngIf="form.controls['username'].errors?.['required']">Username is required</mat-error>
+          <input matInput type="username" formControlName="username"  placeholder="your username...">
         </mat-form-field>
 
 
         <mat-form-field appearance="outline">
           <mat-label>Password:</mat-label>
-          <input type="password" name="password" formControlName="password" matInput placeholder="Your password...">
-          <mat-error *ngIf="!form.controls['password'].errors?.['minlength']">Password is required</mat-error>
-          <mat-error *ngIf="form.controls['password'].errors?.['minlength']">Please enter more than 3 character</mat-error>
+          <input matInput type="password" formControlName="password"  placeholder="Your password...">
         </mat-form-field>
-
 
       </form>
 
-
-
       <div class="foot-form" >
-        <button   mat-raised-button type="submit"[disabled]="!form.valid" >Login</button>
+        <button   mat-raised-button type="submit" (click)="login()" >Login</button>
+
         <h5 class="mt-3 ms-2 fw-normal"> If you don't have an account, please
           <a type="submit" href="../signup" style="color:rgb(117, 174, 96) ;" >Sign-up!</a>
         </h5>
+
       </div>
 
 

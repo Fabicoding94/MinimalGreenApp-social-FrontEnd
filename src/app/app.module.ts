@@ -30,8 +30,9 @@ import { SaveDietComponent } from './component/save-diet/save-diet.component';
 import { SignupComponent } from './component/signup/signup.component';
 
 import { PostComponent } from './main/post/post.component';
-import { FormsModule, ReactiveFormsModule,  } from '@angular/forms';
+import { ReactiveFormsModule,  } from '@angular/forms';
 import { ForumComponent } from './component/forum/forum.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -67,7 +68,8 @@ import { ForumComponent } from './component/forum/forum.component';
         MatDatepickerModule,
         MatNativeDateModule,
         ReactiveFormsModule,
-        FormsModule,
+        HttpClientModule,
+
         SwiperModule,
 
 
