@@ -30,7 +30,7 @@ import { SaveDietComponent } from './component/save-diet/save-diet.component';
 import { SignupComponent } from './component/signup/signup.component';
 
 import { PostComponent } from './main/post/post.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule,  } from '@angular/forms';
 import { ForumComponent } from './component/forum/forum.component';
 
 
@@ -69,6 +69,7 @@ import { ForumComponent } from './component/forum/forum.component';
         ReactiveFormsModule,
         FormsModule,
         SwiperModule,
+
 
 
 

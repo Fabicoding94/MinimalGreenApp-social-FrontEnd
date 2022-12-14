@@ -1,16 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthResponse } from '../models/auth-response';
+import { User } from '../models/user';
 
-type AuthResponse = {
-  token: string,
-  id:number,
-  username:string,
-  roles:string[],
-  data:Date
+type ILogin = {
+  username: string,
+  password: string
 }
 
-export interface ILogin {
-  username: string,
+ type IRegister = {
+  username:string,
+  email: string,
   password: string
 }
 
@@ -24,30 +25,33 @@ export class AuthService {
 
   apiUrl:string = 'http://localhost:8080'
 
+  register(registerData:IRegister):Observable<User>{
+    return this.http.post<User>(this.apiUrl+'/api/users/register', registerData)
+  }
 
-
-  login(loginData:ILogin){
-    return this.http.post<AuthResponse>(this.apiUrl+'/login', loginData)
+  login(loginData:ILogin):Observable<AuthResponse>{
+    return this.http.post<AuthResponse>(this.apiUrl+'/auth/login', loginData)
   }
 
   isUserLogged():boolean{
     return localStorage.getItem('access') != null
   }
 
-  getLoggedUser(){
+  getAccessData():AuthResponse{
     let db = localStorage.getItem('access')
-    return db ? JSON.parse(db).user : null
+    return db ? JSON.parse(db) : null
   }
+
   getAccessToken():string{
     let db = localStorage.getItem('access')
-    return db ? JSON.parse(db).token : null
+    return db ? JSON.parse(db).accessToken : null
   }
 
   saveAccessData(data:AuthResponse){
     localStorage.setItem('access',JSON.stringify(data))
   }
 
-  logOut(){
+  logOut():void{
     localStorage.removeItem('access')
   }
 }
