@@ -12,7 +12,6 @@ export class User {
   description!:string;
   isOnline!: boolean;
   isPrivate!: boolean;
-  image:any;
   registration!:Date;
 
   followers!: Array<User>;

@@ -1,29 +1,16 @@
-export class PostComment {
-  id!:number;
-  postId: number;
-  ownerId: number;
-  title:string;
-  content:string;
-  date: Date;
-  upvotes:number[];
-  downvotes:number[];
-  edited: boolean;
-  isEditing: boolean;
+import { User } from "./user";
 
-  constructor(
-    postId: number,
-    ownerId: number,
-    title: string,
-    content: string
-  ){
-    this.postId = postId;
-    this.ownerId = ownerId;
-    this.title = title;
-    this.content = content;
-    this.date = new Date();
-    this.upvotes = [];
-    this.downvotes = [];
-    this.edited = false;
-    this.isEditing = false
+export class Comment {
+  id!:number;
+  text!:string;
+  date!: Date;
+  edited!: boolean;
+  sender!: User;
+  likes!:User[];
+
+
+
+
+
   }
-}
+

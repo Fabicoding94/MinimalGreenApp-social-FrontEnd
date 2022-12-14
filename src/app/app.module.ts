@@ -33,6 +33,7 @@ import { PostComponent } from './main/post/post.component';
 import { ReactiveFormsModule,  } from '@angular/forms';
 import { ForumComponent } from './component/forum/forum.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './component/profile/profile.component';
 
 
 
@@ -48,7 +49,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
         SaveCO2Component,
         SaveDietComponent,
         PostComponent,
-        ForumComponent
+        ForumComponent,
+        ProfileComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],

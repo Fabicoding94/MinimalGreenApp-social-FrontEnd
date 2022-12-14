@@ -1,32 +1,16 @@
-export class Post {
-  id!: number;
-  ownerId: number;
-  ownerName: string;
-  title: string;
-  content: string;
-  date: Date;
-  upvotes: number[];
-  downvotes: number[];
-  isEditing:boolean = false;
-  editingValue!: string[];
-  edited:boolean;
-  showComments:boolean;
+import { User } from "./user";
+import { Comment } from "./comment";
 
-  constructor(
-    ownerId: number,
-    ownerName: string,
-    title: string,
-    content: string,
-  ){
-    this.ownerId = ownerId;
-    this.ownerName = ownerName;
-    this.title = title;
-    this.content = content;
-    this.date = new Date();
-    this.upvotes = [];
-    this.downvotes = [];
-    this.editingValue = [this.title, this.content];
-    this.edited = false;
-    this.showComments = false;
-  }
+export class Post {
+
+  id!: number;
+  author!: User;
+  title!: string;
+  text!: string;
+  date!: Date;
+  edited!: boolean;
+  likes!: User[];
+  comments!: Comment[];
+
+
 }
