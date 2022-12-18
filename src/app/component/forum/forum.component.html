@@ -1,5 +1,5 @@
 
-
+<h1 style="color: white;">Green Forum Area:</h1>
 
 <div class="posts-container">
 
@@ -9,21 +9,35 @@
       <mat-card-subtitle><a href="/profile">{{post.author.username}}</a><span> {{post.date | date }}</span></mat-card-subtitle>
       <mat-card-content>{{post.text}}</mat-card-content>
 
-      <mat-card-footer>
+    <!-------------------------------------Accordion Commenti----------------------------------------->
 
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-card-actions align="start">
+                <button mat-icon-button aria-label="Example icon button with a heart icon">
+                   <mat-icon>favorite</mat-icon>
+                </button>
 
+              </mat-card-actions>
+              <button mat-raised-button >Comments</button>
+            </mat-panel-title>
 
-      </mat-card-footer>
+          </mat-expansion-panel-header>
+          <mat-card style="width: 60%; margin:20px auto;" *ngFor="let comment of comments">
 
-      <mat-card-actions align="end">
+            <mat-card-subtitle><a href="/profile">{{comment.sender.username}}</a><span> {{comment.date | date }}</span></mat-card-subtitle>
+            <mat-card-content>{{comment.text}}</mat-card-content>
+            </mat-card>
+        </mat-expansion-panel>
 
-
-      </mat-card-actions>
+      </mat-accordion>
     </mat-card>
 
 
 
 </div>
-<button  class="btn new-post-btn" ><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+<button  (click)="openDialog('0ms', '0ms')"  class="btn new-post-btn" ><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
   </svg></button>

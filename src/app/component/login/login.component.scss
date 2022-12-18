@@ -1,6 +1,13 @@
 .example-card {
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 600px;
+  max-height: 700px;
+
+
+
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.09),
+  25px 35px 20px rgba(0, 0, 0, 0.09),
+  25px 30px 30px rgba(0, 0, 0, 0.09),
+  inset -20px -20px 25px rgba(255, 255, 255, 0.2);
 }
 
 mat-card-header{

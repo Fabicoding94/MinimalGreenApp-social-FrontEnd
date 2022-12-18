@@ -9,12 +9,15 @@ import {MatGridListModule} from '@angular/material/grid-list';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,10 +33,12 @@ import { SaveDietComponent } from './component/save-diet/save-diet.component';
 import { SignupComponent } from './component/signup/signup.component';
 
 import { PostComponent } from './main/post/post.component';
-import { ReactiveFormsModule,  } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule,  } from '@angular/forms';
 import { ForumComponent } from './component/forum/forum.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './component/profile/profile.component';
+import { PostFormComponent } from './component/post-form/post-form.component';
+
 
 
 
@@ -51,6 +56,9 @@ import { ProfileComponent } from './component/profile/profile.component';
         PostComponent,
         ForumComponent,
         ProfileComponent,
+        PostFormComponent,
+
+
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -69,8 +77,12 @@ import { ProfileComponent } from './component/profile/profile.component';
         MatInputModule,
         MatDatepickerModule,
         MatNativeDateModule,
+        FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
+        MatChipsModule,
+        MatExpansionModule,
+
 
         SwiperModule,
 
@@ -78,6 +90,9 @@ import { ProfileComponent } from './component/profile/profile.component';
 
 
 
+
     ]
+
 })
 export class AppModule { }
+

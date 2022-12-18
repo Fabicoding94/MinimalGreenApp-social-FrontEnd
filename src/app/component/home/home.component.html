@@ -14,28 +14,35 @@
 
 <mat-card class="mat-card-home">
 
-    <mat-card-title style="color: white; font-size: large ;">Welcome in MyGreenSocial-App</mat-card-title>
-  <mat-card-subtitle>The first Social entirely dedicated to Environmental Issues!</mat-card-subtitle>
-  <mat-card-content>Here you can find some precious advices on how to take care of our planet</mat-card-content>
-  <mat-card-footer>and you can also share your daily green actions with the community!</mat-card-footer>
+  <mat-card-title style="color: white; font-size: large ;">Welcome in MyGreenSocial-App</mat-card-title>
+<mat-card-subtitle>The first Social entirely dedicated to Environmental Issues!</mat-card-subtitle>
+<mat-card-content>Here you can find some precious advices on how to take care of our planet</mat-card-content>
+<mat-card-footer>and you can also share your daily green actions with the community!</mat-card-footer>
 
 </mat-card>
 
 
-<div class="buttons-container">
-  <button [routerLink]="['saveWater']" mat-icon-button class="example-icon, tips-button" id="tips-button1" aria-label="Example icon-button with menu icon">
-    <a href="">Save WATER</a>
-  </button>
-  <button [routerLink]="['saveElectricity']" mat-icon-button class="example-icon, tips-button" id="tips-button2" aria-label="Example icon-button with menu icon">
-    <a href="">Save ELECTRICITY</a>
-  </button>
-  <button [routerLink]="['reduceCO2']" mat-icon-button class="example-icon, tips-button" id="tips-button3" aria-label="Example icon-button with menu icon">
-    <a href="">Reduce CO2</a>
-  </button>
-  <button [routerLink]="['sustainableDiet']" mat-icon-button class="example-icon, tips-button" id="tips-button4" aria-label="Example icon-button with menu icon">
-    <a href="">Sustainable DIET</a>
-  </button>
+<div class="containerbody">
+  <div class="container">
+
+    <div class="drop">
+     <div  class="content"><a href="/saveWater" style="color:green">SAVE WATER</a>
+    <a href="/saveWater">Clicca per scoprire i nostri preziosi consigli</a></div></div>
+    <div  class="drop" >
+      <div class="content"><a href="/saveElectricity" style="color:rgb(67, 101, 16)">SAVE ELECTRICITY</a>
+      <a href="/saveElectricity">Hai mai sentito parlare di carichi fantasma?</a></div></div>
+    <div  class="drop" style="color:green">
+      <div class="content"><a href="/saveCO2" style="color:green">SAVE CO2</a>
+      <a href="/saveCO2">Clicca per scoprire i nostri preziosi consigli</a></div></div>
+    <div class="drop" style="color:rgb(67, 101, 16)">
+      <div class="content"><a href="/saveDiet" style="color:rgb(67, 101, 16)">SUSTAINABLE DIET</a>
+      <a href="/saveDiet">Clicca per scoprire i nostri preziosi consigli</a></div></div>
+  </div>
+
+
+
 </div>
+
 
 
 

@@ -35,16 +35,16 @@ export class AuthService {
     return this.http.post<AuthResponse>(this.apiUrl+'/auth/login', loginData)
   }
 
-  isUserLogged():boolean{
+  isUserLogged():boolean{//ritorna true se l'utente è loggato
     return localStorage.getItem('access') != null
   }
 
-  getAccessData():AuthResponse{
+  getLoggedUser(){ //prende i dati dello user che ha fatto login, se c'è nel localstorage
     let db = localStorage.getItem('access')
-    return db ? JSON.parse(db) : null
+    return db ? JSON.parse(db).user : null
   }
 
-  getAccessToken():string{
+  getAccessToken():string{//prende il token d'accesso
     let db = localStorage.getItem('access')
     return db ? JSON.parse(db).accessToken : null
   }
@@ -53,7 +53,12 @@ export class AuthService {
     localStorage.setItem('access',JSON.stringify(data))
   }
 
-  logOut():void{
+  getAccessData():AuthResponse{
+    let db = localStorage.getItem('access')
+    return db ? JSON.parse(db) : null
+  }
+
+  logOut():void{//rimuove dal localstorage l'accesso
     localStorage.removeItem('access')
   }
 }

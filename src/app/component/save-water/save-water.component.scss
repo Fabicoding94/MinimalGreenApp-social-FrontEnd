@@ -1,13 +1,54 @@
 h1{
-  margin-top: 22vh;
-  margin-left: 10vw;
+  margin-top: 110px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
 }
 
-iframe{
+/*iframe{
   margin-top: 40vh;
   margin-left: 42vw;
 
+}*/
+
+
+//-----------tips-card -----------
+.posts-container{
+  text-align: -moz-center;
+  margin-top: 90px;
+
 
 }
-/*margin-top: 70vh;
-  margin-left: 42vw;*/
+
+mat-card{
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+ // border-radius: 10% 20% 10% 40% / 60% 15% 80% 10% ;
+}
+
+
+mat-card-title{
+  margin-top: 18px !important;
+}
+
+mat-card-title, mat-card-subtitle{
+  text-align: center;
+  margin-left: 18px !important;
+
+}
+
+mat-card-content{
+  text-align: center;
+
+}
+
+
+
+//---------------------------
+//-----------chips-----------
+
+
+.example-chip {
+  transition: transform 250ms cubic-bezier(0.6, 0.6, 0.8, 1);
+  margin-left: 18px !important;
+  margin-top: 20px;
+}
+//------------------------------

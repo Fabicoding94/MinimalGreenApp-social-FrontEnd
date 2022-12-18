@@ -1,4 +1,33 @@
 <h1 style="color: white;">TIPS to SAVE WATER in daily life</h1>
 
+
+<div class="posts-container">
+
+  <mat-card style="width: 60%; margin:20px auto;" *ngFor="let tip of tips">
+    <div class="inner-card">
+
+      <mat-card-title>{{tip.tipTitle}}</mat-card-title>
+
+    <mat-card-subtitle><a href="/saveWater">SAVE_WATER Community</a></mat-card-subtitle>
+    <mat-card-content>{{tip.tipContent}}</mat-card-content>
+
+    <mat-card-footer>
+      <mat-chip-set class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
+        <mat-chip class="example-box" cdkDrag > #save_water </mat-chip>
+      </mat-chip-set>
+    </mat-card-footer>
+
+    <mat-card-actions align="start">
+      <button mat-icon-button aria-label="Example icon button with a heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+
+    </mat-card-actions>
+    </div>
+
+  </mat-card>
+
+</div>
+
   <iframe width="280" height="auto" src="https://www.youtube.com/embed/fwV9OYeGN88" title="YouTube video player" frameborder="0" allow="accelerometer; play; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

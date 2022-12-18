@@ -8,6 +8,7 @@ import { SaveDietComponent } from './component/save-diet/save-diet.component';
 import { SaveElectricityComponent } from './component/save-electricity/save-electricity.component';
 import { SaveWaterComponent } from './component/save-water/save-water.component';
 import { SignupComponent } from './component/signup/signup.component';
+import { PostFormComponent } from './component/post-form/post-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent},
   { path: 'forum', component: ForumComponent},
+  { path: 'postForm', component: PostFormComponent},
+
+
 
 ];
 

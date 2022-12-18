@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         icon: 'success',
         title: 'Welome to our Forum',
         showConfirmButton: false,
-        timer: 3000
+        timer: 1000
       })
       },
       complete: () => this.router.navigate(['/forum'])

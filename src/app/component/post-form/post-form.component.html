@@ -1,0 +1,34 @@
+
+  <mat-card >
+    <mat-card-content>
+
+      <mat-card-header>
+        <mat-card-title>Write your Post</mat-card-title>
+      </mat-card-header>
+
+      <form [formGroup]="postform"   >
+
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Post Title:</mat-label>
+          <input matInput formControlName="title" type="title" placeholder="Title...">
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Post content:</mat-label>
+          <textarea matInput formControlName="text" type="text" placeholder="What do you think about...?"></textarea>
+        </mat-form-field>
+        <mat-label *ngIf="formIsValid == false" class="text-danger">*You must fill the form</mat-label>
+
+      </form>
+
+      <button *ngIf=" formAction == 'create'" [disabled]="postform.invalid"  mat-raised-button (click)="submit(postform.value, authorId)" >Create
+        Post</button>
+      <button *ngIf=" formAction == 'edit'" [disabled]="postform.invalid"  mat-raised-button >Edit
+        Post</button>
+
+    </mat-card-content>
+  </mat-card>
+
+
+

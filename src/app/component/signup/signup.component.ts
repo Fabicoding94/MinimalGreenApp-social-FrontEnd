@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 
 
 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -33,14 +34,14 @@ export class SignupComponent implements OnInit {
     this.authSvc.register(this.form.value)
     .subscribe({
       next: res => {
-      console.log(res),
-      Swal.fire({
+        console.log(res),
+        Swal.fire({
         position: 'center',
         icon: 'success',
         title: 'Registered successfully',
         showConfirmButton: false,
         timer: 3000
-      })
+        })
       },
       complete: () => this.router.navigate(['/login'])
       ,
@@ -53,6 +54,6 @@ export class SignupComponent implements OnInit {
             timer: 3000
           })
         }
-      })
+    })
   }
 }
