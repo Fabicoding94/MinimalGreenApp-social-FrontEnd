@@ -22,6 +22,8 @@ h1{
 mat-card{
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
  // border-radius: 10% 20% 10% 40% / 60% 15% 80% 10% ;
+  width: 60%;
+  margin:20px auto;
 }
 
 
@@ -52,3 +54,9 @@ mat-card-content{
   margin-top: 20px;
 }
 //------------------------------
+//-------Media Queries:---------
+
+@media screen and (max-width: 500px) {
+
+
+}

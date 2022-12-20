@@ -1,6 +1,7 @@
 
 .mat-card-home{
   font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 15px;
   position: sticky;
   top: 10vh;
   width: 100%;
@@ -11,26 +12,9 @@
   padding: 5vh 0 5vh 0
 }
 
-.mat-card-home2{
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  width: 100%;
-  height: auto;
-  text-align: center;
-  background-color: transparent;
-  border: none;
-  margin-top: 50vh;
- /* margin-left: 10vw;
-  margin-right: 10vw;
 
-  margin-bottom: 13vw;*/
-}
 
-.mat-card-title{
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: larger;
-  padding-bottom: 100px;
 
-}
 
 
 .tips-button{
@@ -54,13 +38,84 @@ a{
 .tips-button{
   flex: 1 1 auto;
 }
+//---------------------------------Animated strings----------------------
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.wrapper{
+  display: flex;
+  justify-content: center;
+  margin-top: 90px;
+}
+
+.spanText{
+  text-align: center;
+}
+.wrapper .static-txt{
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400;
+}
+.wrapper .dynamic-txts{
+  margin-left: 15px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li{
+  list-style: none;
+  color: #064206;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100%{
+    top: -360px;
+  }
+}
+.dynamic-txts li span{
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #3cb54e;
+  border-left: 2px solid #FC6D6D;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
 //--------------------------------------------CARDS A GOCCIA-----------------------------------------------------
 .containerbody{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+
 
 
 }
@@ -72,7 +127,7 @@ a{
   flex-wrap: wrap;
   padding: 50px 0;
   gap: 40px 60px;
-  margin-top: 30vh;
+
 }
 
 .container .drop{

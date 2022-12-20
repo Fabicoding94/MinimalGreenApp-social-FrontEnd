@@ -9,6 +9,7 @@ import { SaveElectricityComponent } from './component/save-electricity/save-elec
 import { SaveWaterComponent } from './component/save-water/save-water.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { PostFormComponent } from './component/post-form/post-form.component';
+import { NotizieComponent } from './component/notizie/notizie.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent},
   { path: 'forum', component: ForumComponent},
   { path: 'postForm', component: PostFormComponent},
+  { path: 'notizie', component: NotizieComponent},
 
 
 

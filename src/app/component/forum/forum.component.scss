@@ -1,12 +1,72 @@
 h1{
   margin-top: 90px;
-  margin-left: 40px;
+ text-align: center;
+  color: aliceblue;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+//----------users & post list flex------------
+.usersAndposts-container{
+  display: flex;
+ width: 100%;
+ justify-content: space-evenly;
+
+}
+//----------users list------------
+
+.users-container{
+  text-align: -moz-left;
+  width: 200px !important;
+
+  margin-top: 60px;
 }
 
-.posts-container{
-    text-align: -moz-center;
-    margin-top: 60px;
+.userscard-container{
 
+  width: 100% !important;
+
+;
+}
+
+.single-usercard{
+
+  border-bottom: 1px solid rgb(4, 77, 10);
+  box-shadow: none !important;
+}
+
+//-------post list-------
+
+.posts-container{
+    text-align: -moz-end;
+    width: 60vw;
+
+
+}
+
+.barra-ricerca-forum{
+  margin-bottom: 20px;
+  height: 55px;
+}
+
+.ricerca-form{
+  width: 60vw !important;
+}
+//--------barra ricerca-------
+.barra-form {
+  min-width: 150px;
+
+  width: 100%;
+}
+
+.barra-full-width {
+  width: 100%;
+}
+
+//--------Post cards-------
+
+.single-post-card{
+
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 mat-card{
@@ -26,11 +86,29 @@ mat-card-title, mat-card-subtitle{
 mat-card-content{
     text-align: start;
 }
+
+mat-card-header{
+  border-bottom: 1px solid rgb(4, 77, 10);
+}
+//-----------------comment card-------------------
+.inputCommentoForm {
+  min-width: 150px;
+
+  width: 100%;
+}
+//-------------right container-------------------
+.right-container{
+
+    width: 200px !important;
+
+    margin-top: 60px;
+
+}
 //-------------button-------------------
 .new-post-btn{
     width: 60px;
     height: 60px;
-    background-color: rgba(174,221,205,255);
+    background-color: #4caf5e ;
 
     position: sticky;
     bottom: 10px;
@@ -43,7 +121,7 @@ mat-card-content{
   svg{
     color: white;
     &:hover{
-        color: grey;
+        color:  #1c9933;
     }
   }
 
@@ -56,3 +134,32 @@ mat-card-content{
   mat-card-actions{
      resize: both !important;
   }
+
+
+  //------------Media Queries--------
+
+@media screen and (max-width: 1160px) {
+
+  .users-container, .right-container{
+    text-align: -moz-left;
+    width: 200px !important;
+
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+
+  .right-container{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 840px) {
+
+  .users-container{
+    display: none;
+  }
+}
+
+

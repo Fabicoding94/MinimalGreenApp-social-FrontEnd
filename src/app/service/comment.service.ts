@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Comment} from '../models/comment'
+import { CommentDto } from '../models/commentDTO';
 import { Post} from '../models/post'
 
 
@@ -22,10 +23,10 @@ export class CommentService {
     return this.http.get<Comment[]>(this.apiUrl+"/post_id/"+ postId)
   }
 
- /* addPost(comment: FormData):Observable<Comment>{
-    return this.http.post<Comment>(this.apiUrl, post)
+  addComment(comment: CommentDto):Observable<Comment>{
+    return this.http.post<Comment>(this.apiUrl, comment)
   }
-
+/*
   editPost(comment:Comment):Observable<Comment>{
     return this.http.patch<Comment>(this.apiUrl + '/' + post.id, post)
   }

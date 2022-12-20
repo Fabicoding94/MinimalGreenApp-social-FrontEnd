@@ -1,43 +1,104 @@
 
-<h1 style="color: white;">Green Forum Area:</h1>
+<h1 >Forum Area:</h1>
+<div class="usersAndposts-container">
+   <!---------------Tabella laterale utenti (left)------------------->
+  <div class="users-container">
+    <mat-card class="userscard-container">
+      <mat-card-header>Users online:</mat-card-header>
 
-<div class="posts-container">
+        <mat-card class="single-usercard" *ngFor="let user of users">
+          <mat-card-title><a href="/profile">{{user.username}}</a></mat-card-title>
+        </mat-card>
 
-    <mat-card style="width: 60%; margin:20px auto;" *ngFor="let post of posts">
-      <mat-card-title>{{post.title}}</mat-card-title>
-
-      <mat-card-subtitle><a href="/profile">{{post.author.username}}</a><span> {{post.date | date }}</span></mat-card-subtitle>
-      <mat-card-content>{{post.text}}</mat-card-content>
-
-    <!-------------------------------------Accordion Commenti----------------------------------------->
-
-      <mat-accordion>
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <mat-card-actions align="start">
-                <button mat-icon-button aria-label="Example icon button with a heart icon">
-                   <mat-icon>favorite</mat-icon>
-                </button>
-
-              </mat-card-actions>
-              <button mat-raised-button >Comments</button>
-            </mat-panel-title>
-
-          </mat-expansion-panel-header>
-          <mat-card style="width: 60%; margin:20px auto;" *ngFor="let comment of comments">
-
-            <mat-card-subtitle><a href="/profile">{{comment.sender.username}}</a><span> {{comment.date | date }}</span></mat-card-subtitle>
-            <mat-card-content>{{comment.text}}</mat-card-content>
-            </mat-card>
-        </mat-expansion-panel>
-
-      </mat-accordion>
     </mat-card>
+  </div>
 
 
+
+   <!------------- colonna centrale--------------------->
+  <div class="posts-container">
+              <!---------------Barra ricerca + autocomplete------------------->
+    <mat-card class="barra-ricerca-forum">
+        <form class="barra-form">
+          <mat-form-field class="barra-full-width" appearance="outline">
+            <mat-label></mat-label>
+            <input style="width: 400px;" class="ricerca-form" type="text"
+                   placeholder="Find your topic..."
+                   aria-label="Find your topic..."
+                   matInput
+                   [formControl]="myControl"
+                   [matAutocomplete]="auto">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
+     </mat-card>
+              <!---------------Tabella centrale post------------------->
+      <mat-card class="single-post-card"   *ngFor="let post of posts">
+        <mat-card-title>{{post.title}}</mat-card-title>
+
+        <mat-card-subtitle><a href="/profile">{{post.author.username}}</a><span> {{post.date | date }}</span></mat-card-subtitle>
+        <mat-card-content>{{post.text}}</mat-card-content>
+
+             <!--------------------Accordion Commenti-------------------->
+
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-card-actions align="start">
+                  <button mat-icon-button aria-label="Example icon button with a heart icon">
+                     <mat-icon>favorite</mat-icon>
+                  </button>
+
+                </mat-card-actions>
+                <button mat-raised-button >Comments</button>
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <!--------input commento-------->
+            <div >
+
+              <mat-form-field class="form-field" appearance="outline">
+
+                <input matInput [(ngModel)]="commentText"  type="text" placeholder="Comment here...">
+              </mat-form-field>
+              <button   mat-raised-button  (click)="sendComment(commentText, post.id)" >Send</button>
+            </div>
+
+            <!--------lista commenti--------->
+            <mat-card  style="width: 60%; margin:20px auto;" *ngFor="let comment of comments">
+
+              <mat-card-subtitle><a href="/profile">{{comment.sender.username}}</a><span> {{comment.date | date }}</span></mat-card-subtitle>
+              <mat-card-content>{{comment.text}}</mat-card-content>
+
+            </mat-card>
+          </mat-expansion-panel>
+
+        </mat-accordion>
+      </mat-card>
+
+  </div>
+     <!---------------Tabella a destra----------e3725e3f0ef04c3c9dd439de8cebd199--------->
+     <div class="right-container">
+      <mat-card class="rg-container">
+        <mat-card-header>News online:</mat-card-header>
+
+          <mat-card class="single-usercard" *ngFor="let user of users">
+            <mat-card-title><a href="/profile">{{user.username}}</a></mat-card-title>
+          </mat-card>
+
+      </mat-card>
+    </div>
 
 </div>
+
 <button  (click)="openDialog('0ms', '0ms')"  class="btn new-post-btn" ><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
   </svg></button>
+
+
+

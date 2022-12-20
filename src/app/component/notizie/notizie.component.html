@@ -1,0 +1,13 @@
+<h1 >News from around the World!:</h1>
+
+<div class="container-notizie">
+
+  <mat-card class="single-post-card"   *ngFor="let notizia of notizie">
+    <mat-card-title>{{notizia.title}}</mat-card-title>
+
+    <mat-card-subtitle><a>{{notizia.author}}</a><span> {{notizia.publishedAt | date }}</span></mat-card-subtitle>
+    <mat-card-content>{{notizia.description}}</mat-card-content>
+
+  </mat-card>
+</div>
+

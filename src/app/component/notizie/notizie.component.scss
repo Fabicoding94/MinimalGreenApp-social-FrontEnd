@@ -1,0 +1,39 @@
+h1{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: aliceblue;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.container-notizie{
+  text-align: center;
+  width: 60vw;
+}
+
+.single-post-card{
+
+  width: 600px;
+  margin-bottom: 10px;
+}
+
+mat-card{
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+}
+
+mat-card-title{
+    margin-top: 18px !important;
+}
+
+mat-card-title, mat-card-subtitle{
+    text-align: start;
+    margin-left: 18px !important;
+}
+
+mat-card-content{
+    text-align: start;
+}
+
+mat-card-header{
+  border-bottom: 1px solid rgb(4, 77, 10);
+}

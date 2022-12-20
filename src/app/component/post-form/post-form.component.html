@@ -22,7 +22,7 @@
 
       </form>
 
-      <button *ngIf=" formAction == 'create'" [disabled]="postform.invalid"  mat-raised-button (click)="submit(postform.value, authorId)" >Create
+      <button *ngIf=" formAction == 'create'" [disabled]="postform.invalid"  mat-raised-button (click)="submit(postform.value)" >Create
         Post</button>
       <button *ngIf=" formAction == 'edit'" [disabled]="postform.invalid"  mat-raised-button >Edit
         Post</button>

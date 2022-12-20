@@ -7,14 +7,17 @@ import { AuthResponse } from 'src/app/models/auth-response';
 import {MatExpansionModule} from '@angular/material/expansion';
 
 
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
-import { PostDto } from 'src/app/models/postDTO';
+import { CommentDto } from 'src/app/models/commentDTO';
 
 import { AuthService } from 'src/app/service/auth.service';
 import { CommentService } from 'src/app/service/comment.service';
 import { PostFormComponent } from '../post-form/post-form.component';
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/service/user.service';
+import { map, Observable, startWith } from 'rxjs';
 
 @Component({
   selector: 'app-forum',
@@ -23,7 +26,7 @@ import { PostFormComponent } from '../post-form/post-form.component';
 })
 export class ForumComponent implements OnInit {
 
-  currentPost: Post = new Post();
+
   loggedUser!: AuthResponse;
   postform!: FormGroup;
   formAction: string = 'create'
@@ -31,10 +34,28 @@ export class ForumComponent implements OnInit {
   private dialogRef: any;
 
 
+
+  //----comment form
+
+  commentform!: FormGroup;
+  authorId:number = this.authSvc.getLoggedUser();
+
+
+
+  //---------autocomplete------
+  myControl = new FormControl('');
+  options: string[] = ['Come possiamo limitare il riscaldamento globale?',
+                        'Cosa pensate delle diete sostenibili?',
+                        ''];
+  filteredOptions!: Observable<string[]>;
+  //--
+
+
   constructor(
     private dialog: MatDialog,
      private postSvc:PostService,
      private commentSvc: CommentService,
+     private userSvc:UserService,
      private authSvc: AuthService,
     private formBuilder: FormBuilder,){}
 
@@ -43,11 +64,37 @@ export class ForumComponent implements OnInit {
 
 
   posts:Post[] = [];
+  post!: Post;
+
 
   comments:Comment[] = [];
+  commentText: string = '';
+  senderId!: number;
+
+
+
+  users:User[] = [];
 
   ngOnInit(): void {
     this.getPosts()
+    this.getUsers()
+    this.getCommentsOfPost()
+
+    //--autocomplete
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value || '')),
+    );
+    //--
+
+    if (this.checkLog())
+    this.loggedUser = this.authSvc.getAccessData()
+
+    this.commentform = this.formBuilder.group({
+      text:['', Validators.required ],
+    } ,)
+
+
 
 
   }
@@ -57,29 +104,63 @@ export class ForumComponent implements OnInit {
       this.posts = posts)
   }
 
-
-
-  getComments(): void {
-
-    this.commentSvc.getAllComments().subscribe(comments =>
-      this.comments = comments)
-
-
+  getUsers(): void {
+    this.userSvc.getAllUsers().subscribe(users =>
+      this.users = users)
   }
+
+
+getCommentsOfPost(): void{
+  this.commentSvc.getAllCommentsByPostId(this.post.id).subscribe({
+    next: res => {
+      this.comments = res
+
+    },
+    error: error => console.log(error)
+  })
+
+
+}
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(PostFormComponent, {
-      width: '550px',
+      width: '650px',
       enterAnimationDuration,
       exitAnimationDuration,
     });
   }
 
+  //---autocomplete
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
 
+    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  }
 
+  checkLog(): boolean {
+    return this.authSvc.isUserLogged()
+  }
 
+  sendComment(commentText: string, postId: number | undefined) {
+
+    if (postId) {
+      let commentDto: CommentDto = {
+        text: commentText,
+        postId: this.post.id,
+        senderId: this.loggedUser.id
+      }
+      this.commentSvc.addComment(commentDto)
+      this.commentText = ''
+    }
+  }
 
 }
+
+
+
+
+
+
 
 
 

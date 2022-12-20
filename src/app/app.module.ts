@@ -38,6 +38,8 @@ import { ForumComponent } from './component/forum/forum.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './component/profile/profile.component';
 import { PostFormComponent } from './component/post-form/post-form.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { NotizieComponent } from './component/notizie/notizie.component';
 
 
 
@@ -57,6 +59,7 @@ import { PostFormComponent } from './component/post-form/post-form.component';
         ForumComponent,
         ProfileComponent,
         PostFormComponent,
+        NotizieComponent,
 
 
     ],
@@ -82,6 +85,7 @@ import { PostFormComponent } from './component/post-form/post-form.component';
         HttpClientModule,
         MatChipsModule,
         MatExpansionModule,
+        MatAutocompleteModule,
 
 
         SwiperModule,

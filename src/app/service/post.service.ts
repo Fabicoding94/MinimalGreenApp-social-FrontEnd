@@ -32,7 +32,7 @@ export class PostService {
     return this.http.get<Post[]>(this.apiUrl+"/author/"+id)
   }
 
-  addPost(post: PostDto, authorId:number):Observable<Post>{
+  addPost(post: PostDto):Observable<Post>{
     return this.http.post<Post>(this.apiUrl, post)
   }
 
