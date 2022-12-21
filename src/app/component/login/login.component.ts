@@ -37,6 +37,9 @@ export class LoginComponent implements OnInit {
         showConfirmButton: false,
         timer: 1000
       })
+      setTimeout(() => {
+        window.location.reload()
+      },100)
       },
       complete: () => this.router.navigate(['/forum'])
       ,

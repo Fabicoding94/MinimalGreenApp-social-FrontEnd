@@ -88,7 +88,7 @@ mat-card-content{
 }
 
 mat-card-header{
-  border-bottom: 1px solid rgb(4, 77, 10);
+  border-bottom: 1px solid rgb(8, 52, 8);
 }
 //-----------------comment card-------------------
 .inputCommentoForm {
@@ -121,8 +121,28 @@ mat-card-header{
   svg{
     color: white;
     &:hover{
-        color:  #1c9933;
+        color:  rgb(8, 52, 8);
     }
+  }
+
+  .btn{
+    color:rgb(8, 52, 8)
+  }
+
+  .interaction-btns{
+   display: flex;
+  width: 100% ;
+  }
+
+.modify-delete-btn{
+  display: flex;
+
+}
+
+
+  .like-btn:hover{
+    background-color: red;
+
   }
 
   .new-post-btn:hover{
@@ -134,6 +154,7 @@ mat-card-header{
   mat-card-actions{
      resize: both !important;
   }
+//---------------------------------------CLOCK----------------------------------
 
 
   //------------Media Queries--------

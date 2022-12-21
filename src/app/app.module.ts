@@ -44,6 +44,7 @@ import { NotizieComponent } from './component/notizie/notizie.component';
 
 
 
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -60,6 +61,7 @@ import { NotizieComponent } from './component/notizie/notizie.component';
         ProfileComponent,
         PostFormComponent,
         NotizieComponent,
+
 
 
     ],

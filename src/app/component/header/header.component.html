@@ -4,9 +4,20 @@
   </button>
   <a href="/" class="colorGreen">MyGreen App</a>
   <a class="me-3 colorGreen learn-btn" mat-raised-button href="/">Learning-How</a>
+  <a class="me-3 colorGreen learn-btn" mat-raised-button href="/notizie">Global-News</a>
   <span class="example-spacer"></span>
-  <a class="me-3 colorGreen login-btn" mat-raised-button href="../login">Login</a>
+
+  <div *ngIf="checkLog()">
+
+    <span class="welcome"> Welcome to the Forum area {{loggedUser.username}}</span>
+    <a mat-raised-button class="colorGreen"  [routerLink]="['/forum']">Forum</a>
+    <a mat-raised-button class="colorGreen"  (click)="logOut()" [routerLink]="['/']">Logout</a>
+  </div>
+  <div  *ngIf="!checkLog()">
+    <a class="me-3 colorGreen login-btn" mat-raised-button href="../login">Login</a>
 	<a class="colorGreen signin-btn" mat-raised-button href="../signup">Signup</a>
+  </div>
+
   <button mat-icon-button class="example-icon menu-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>

@@ -122,6 +122,17 @@ getCommentsOfPost(): void{
 
 }
 
+ delete(): void{
+  Swal.fire({
+    title: 'warning!',
+    text: "Are you sure you want to delete this post?",
+    icon: 'warning',
+    cancelButtonText: 'Cancel',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, delete it!'
+  })
+ }
+
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(PostFormComponent, {
       width: '650px',
@@ -155,6 +166,12 @@ getCommentsOfPost(): void{
   }
 
 }
+
+
+
+
+
+
 
 
 

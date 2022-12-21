@@ -1,12 +1,28 @@
-<h1 >News from around the World!:</h1>
+<div class="titolo-pag-notizie"><h1 >News from around the World!:</h1></div>
+
 
 <div class="container-notizie">
 
-  <mat-card class="single-post-card"   *ngFor="let notizia of notizie">
-    <mat-card-title>{{notizia.title}}</mat-card-title>
+  <mat-card class="post-cards"   *ngFor="let notizia of notizie">
+    <mat-card>
+      <mat-card-title>{{notizia.title}}</mat-card-title>
+      <img src="{{notizia.urlToImage}}" width="50%" alt="">
 
-    <mat-card-subtitle><a>{{notizia.author}}</a><span> {{notizia.publishedAt | date }}</span></mat-card-subtitle>
-    <mat-card-content>{{notizia.description}}</mat-card-content>
+      <mat-card-subtitle><a>{{notizia.author}}</a><span> {{notizia.publishedAt | date }}</span></mat-card-subtitle>
+      <mat-card-content>{{notizia.description}}</mat-card-content>
+
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title > <a href="{{notizia.url}}">Read more</a></mat-panel-title>
+
+          </mat-expansion-panel-header>
+          {{notizia.content}}
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </mat-card>
+
 
   </mat-card>
 </div>

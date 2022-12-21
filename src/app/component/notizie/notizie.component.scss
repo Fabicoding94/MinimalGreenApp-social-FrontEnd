@@ -1,18 +1,28 @@
+body{
+  width: 100vw;
+}
 h1{
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: aliceblue;
   text-align: center;
   margin-top: 100px;
+  position: sticky;
+
+  top: 100px;
 }
 
 .container-notizie{
+ // display: grid;
+ // grid-template-columns: 250px 250px 250px 250px 250px;
+ // grid-template-rows: 300px 300px 300px 300px ;
+
+
   text-align: center;
   width: 60vw;
+  margin: auto;
 }
 
-.single-post-card{
-
-  width: 600px;
+.post-cards{
   margin-bottom: 10px;
 }
 

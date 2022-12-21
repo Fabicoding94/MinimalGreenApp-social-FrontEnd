@@ -64,7 +64,7 @@ body{
 }
 .wrapper .static-txt{
   color: #fff;
-  font-size: 60px;
+  font-size: 3.5vw;
   font-weight: 400;
 }
 .wrapper .dynamic-txts{
@@ -76,7 +76,9 @@ body{
 .dynamic-txts li{
   list-style: none;
   color: #064206;
-  font-size: 60px;
+  //font-size: 60px;
+  font-size: 3.5vw;
+
   font-weight: 500;
   position: relative;
   top: 0;
@@ -90,6 +92,7 @@ body{
 .dynamic-txts li span{
   position: relative;
   margin: 5px 0;
+  margin-right: 4vw;
   line-height: 90px;
 }
 .dynamic-txts li span::after{
@@ -99,8 +102,9 @@ body{
   height: 100%;
   width: 100%;
   background: #3cb54e;
-  border-left: 2px solid #FC6D6D;
+  border-left: 2px solid #fffcfc;
   animation: typing 3s steps(10) infinite;
+  margin-top:2vh;
 }
 @keyframes typing {
   40%, 60%{
@@ -124,7 +128,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: baseline;
-  flex-wrap: wrap;
+ // flex-wrap: wrap;
   padding: 50px 0;
   gap: 40px 60px;
 
@@ -134,8 +138,8 @@ body{
   font-family: Georgia, 'Times New Roman', Times, serif;
 
   position: relative ;
-  width: 250px;
-  height: 250px;
+  width: 17vw;
+  height: 17vw;
 
   box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.09),
   25px 35px 20px rgba(0, 0, 0, 0.09),
@@ -210,7 +214,89 @@ body{
 }
 
 //-------------- FINE CARDS A GOCCIA ---------------
+//---------Media Queries----------
+@media screen and (max-width: 992px) {
 
+  .dynamic-txts li span{
+    position: relative;
+    margin: 5px 0;
+    margin-right: 4vw;
+    line-height: 90px;
+  }
+  .dynamic-txts li span::after{
+content: none;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    animation: typing 3s steps(10) infinite;
+    margin-top:2vh;
+  }
+  @keyframes typing {
+    40%, 60%{
+      left: calc(100% + 30px);
+    }
+    100%{
+      left: 0;
+    }
+  }
+
+  @media screen and (max-width: 340px) {
+
+    .mat-card-home{
+      display: flex;
+      justify-content:space-around;
+      margin: 0, 10vh;
+      position: sticky;
+      top: 6vh;
+    }
+
+    .wrapper{
+      margin-top: 50px;
+    }
+
+    .wrapper .dynamic-txts{
+      margin-left: 0;
+      height: 81px;
+      line-height: 63px;
+      overflow: hidden;
+
+
+    }
+
+    .dynamic-txts li span {
+      font-size: 8vw;
+      font-size: 5.5vw;
+      font-weight: 500;
+      position: relative;
+      top: 0;
+    }
+
+    div .static-txt{
+      width: 250px;
+      margin-left: 10vw;
+    }
+    .wrapper .static-txt{
+      font-size: 8vw;
+      line-height: 100%;
+
+    }
+  }
+
+  @media screen and (max-width: 340px) {
+
+  .dynamic-txt li{
+    font-size: 5.5vw;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+  }
+
+
+}
+
+}
 
 
 

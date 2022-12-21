@@ -4,10 +4,10 @@
    <!---------------Tabella laterale utenti (left)------------------->
   <div class="users-container">
     <mat-card class="userscard-container">
-      <mat-card-header>Users online:</mat-card-header>
+      <mat-card-header>Users:</mat-card-header>
 
         <mat-card class="single-usercard" *ngFor="let user of users">
-          <mat-card-title><a href="/profile">{{user.username}}</a></mat-card-title>
+          <mat-card-title><a href="/profile"><mat-icon>account_circle</mat-icon>  {{user.username}}</a></mat-card-title>
         </mat-card>
 
     </mat-card>
@@ -28,6 +28,7 @@
                    matInput
                    [formControl]="myControl"
                    [matAutocomplete]="auto">
+
             <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
               <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                 {{option}}
@@ -38,10 +39,30 @@
      </mat-card>
               <!---------------Tabella centrale post------------------->
       <mat-card class="single-post-card"   *ngFor="let post of posts">
-        <mat-card-title>{{post.title}}</mat-card-title>
 
+
+        <mat-card-title>{{post.title}}</mat-card-title>
         <mat-card-subtitle><a href="/profile">{{post.author.username}}</a><span> {{post.date | date }}</span></mat-card-subtitle>
         <mat-card-content>{{post.text}}</mat-card-content>
+
+        <div class="interaction-btns">
+
+            <button mat-icon-button style="font-size: small;">{{post.likes.length}}</button>
+            <button mat-icon-button   aria-label="Example icon button with a heart icon">
+              <mat-icon  class="like-btn">favorite_border</mat-icon>
+            </button>
+            <div class="modify-delete-btn">
+              <button mat-icon-button class="btn-modify">
+                <mat-icon class="icon-modify">create</mat-icon>
+              </button>
+              <button mat-icon-button class="btn-delete" (click)="delete()">
+                <mat-icon class="icon-delete">restore_from_trash</mat-icon>
+              </button>
+            </div>
+
+
+
+        </div>
 
              <!--------------------Accordion Commenti-------------------->
 
@@ -50,9 +71,7 @@
             <mat-expansion-panel-header>
               <mat-panel-title>
                 <mat-card-actions align="start">
-                  <button mat-icon-button aria-label="Example icon button with a heart icon">
-                     <mat-icon>favorite</mat-icon>
-                  </button>
+
 
                 </mat-card-actions>
                 <button mat-raised-button >Comments</button>
@@ -82,19 +101,8 @@
       </mat-card>
 
   </div>
-     <!---------------Tabella a destra----------e3725e3f0ef04c3c9dd439de8cebd199--------->
-     <div class="right-container">
-      <mat-card class="rg-container">
-        <mat-card-header>News online:</mat-card-header>
+  <!-------------------------------------CLOCK--------------------------------->
 
-          <mat-card class="single-usercard" *ngFor="let user of users">
-            <mat-card-title><a href="/profile">{{user.username}}</a></mat-card-title>
-          </mat-card>
-
-      </mat-card>
-    </div>
-
-</div>
 
 <button  (click)="openDialog('0ms', '0ms')"  class="btn new-post-btn" ><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>

@@ -31,6 +31,9 @@ button{
   color: white !important;
 
 }
+.mat-icon{
+  margin-left: 95%;
+}
 
 .center-content{
   text-align: -moz-center;
@@ -40,5 +43,7 @@ button{
 }
 
 mat-form-field{
+  display: flex;
+  justify-content: space-between;
   width: 100%
 };

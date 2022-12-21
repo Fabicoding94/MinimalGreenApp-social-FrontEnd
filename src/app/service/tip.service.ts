@@ -17,16 +17,16 @@ export class TipService {
     return this.http.get<Tip[]>(this.apiUrl)
   }
 
-  getAllSaveElectricityTips():Observable<Tip[]>{
-    return this.http.get<Tip[]>(this.apiUrl+"/tipType/SAVE_ELECTRICITY")
+  getAllSaveElectricityTips():Observable<any>{ //I use any to not have errors
+    return this.http.get(this.apiUrl+"/tipType/SAVE_ELECTRICITY")
   }
 
-  getAllRecuceCO2Tips():Observable<Tip[]>{
-    return this.http.get<Tip[]>(this.apiUrl+"/tipType/REDUCE_CO2")
+  getAllRecuceCO2Tips():Observable<any>{
+    return this.http.get(this.apiUrl+"/tipType/REDUCE_CO2")
   }
 
-  getAllSustDietTips():Observable<Tip[]>{
-    return this.http.get<Tip[]>(this.apiUrl+"/tipType/SUSTAINABLE_DIET")
+  getAllSustDietTips():Observable<any>{
+    return this.http.get(this.apiUrl+"/tipType/SUSTAINABLE_DIET")
   }
 /*
   getAllPostsByAuthorId(id:number):Observable<Tip[]>{

@@ -43,4 +43,8 @@ export class PostService {
   deletePost(post:Post):Observable<Post>{
     return this.http.delete<Post>(this.apiUrl + '/' + post.id)
   }
+
+  likePost(postId: string, likerId: number) {
+    return this.http.put<Post>(this.apiUrl+"/"+postId+"/like", likerId)
+  }
 }
