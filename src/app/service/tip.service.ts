@@ -13,8 +13,12 @@ export class TipService {
 
   apiUrl:string = 'http://localhost:8080/api/tips'
 
-  getAllSaveWaterTips():Observable<Tip[]>{
+  /* getAllTips():Observable<Tip[]>{         //to get all tips
     return this.http.get<Tip[]>(this.apiUrl)
+  }*/
+
+  getAllSaveWaterTips():Observable<any>{
+    return this.http.get(this.apiUrl+"/tipType/SAVE_WATER")
   }
 
   getAllSaveElectricityTips():Observable<any>{ //I use any to not have errors
