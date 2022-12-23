@@ -56,7 +56,7 @@ body{
 .wrapper{
   display: flex;
   justify-content: center;
-  margin-top: 90px;
+  height: fit-content;
 }
 
 .spanText{
@@ -215,86 +215,134 @@ body{
 
 //-------------- FINE CARDS A GOCCIA ---------------
 //---------Media Queries----------
-@media screen and (max-width: 992px) {
 
-  .dynamic-txts li span{
-    position: relative;
-    margin: 5px 0;
-    margin-right: 4vw;
-    line-height: 90px;
-  }
-  .dynamic-txts li span::after{
-content: none;
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
 
-    animation: typing 3s steps(10) infinite;
-    margin-top:2vh;
-  }
-  @keyframes typing {
-    40%, 60%{
-      left: calc(100% + 30px);
-    }
-    100%{
-      left: 0;
-    }
+@media screen and (min-width: 280px) and (max-width: 1024px)  { //da schermi mobile fino tablet
+
+  .wrapper, .mat-card-home{
+    padding: 25px 30px;
   }
 
-  @media screen and (max-width: 340px) {
-
-    .mat-card-home{
-      display: flex;
-      justify-content:space-around;
-      margin: 0, 10vh;
-      position: sticky;
-      top: 6vh;
-    }
-
-    .wrapper{
-      margin-top: 50px;
-    }
-
-    .wrapper .dynamic-txts{
-      margin-left: 0;
-      height: 81px;
-      line-height: 63px;
-      overflow: hidden;
-
-
-    }
-
-    .dynamic-txts li span {
-      font-size: 8vw;
-      font-size: 5.5vw;
-      font-weight: 500;
-      position: relative;
-      top: 0;
-    }
-
-    div .static-txt{
-      width: 250px;
-      margin-left: 10vw;
-    }
-    .wrapper .static-txt{
-      font-size: 8vw;
-      line-height: 100%;
-
-    }
+  .containerbody .container{
+    width: 100vw;
+    padding: 0 30px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  @media screen and (max-width: 340px) {
+  .drop .content a:last-child{
+    display: none;
+  }
 
-  .dynamic-txt li{
+  .wrapper{
+    margin-top: 50px;
+  }
+
+  .wrapper .dynamic-txts{
+    margin: 0;
+    padding: 0;
+    height: 81px;
+    width: 230px;
+    line-height: 63px;
+    overflow: hidden;
+
+  }
+
+  .dynamic-txts li span {
+    font-size: 8vw;
     font-size: 5.5vw;
     font-weight: 500;
     position: relative;
     top: 0;
   }
 
+  div .static-txt{
+    width: 250px;
+
+  }
+  .wrapper .static-txt{
+    font-size: 8vw;
+    line-height: 100%;
+
+  }
+  /**********Drop cards***********/
+  .container .drop{
+    width: 110px;
+    height: 110px;
+    justify-content: space-around;
+
+  }
+  .container .drop .content a{
+   font-size: 13.5px;
+
+  }
+
+  .containerbody .container{
+    gap: 25px 30px;
+
+  }
+
+  .container .drop:before{
+    content: '';
+    position: absolute;
+    top: 17px;
+    left: 26px;
+    width:15px;
+    height:15px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.4;
+
+  }
+
+  .container .drop:after{
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 42px;
+    width:5px;
+    height:5px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.5;
+
+  }
 
 }
+
+@media screen and (min-width: 1024px) {
+
+  .drop .content a:last-child{
+    display: inline;
+  }
+
+}
+
+@media screen and (min-width: 590px) {
+
+  .mat-card-home, mat-card-subtitle{
+   font-size:20px ;
+   padding: 25px 40px;
+  }
+
+  .wrapper{
+    margin-top: 60px;
+  }
+
+
+  .containerbody{
+    margin-top: 20px;
+  }
+
+  .container .drop{
+    transition: all 500ms ease-in;
+  }
+
+  .container .drop:hover{
+    width: 113px;
+    height: 113px;
+  }
+
 
 }
 

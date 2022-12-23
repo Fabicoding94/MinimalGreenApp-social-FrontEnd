@@ -34,6 +34,21 @@ a{
   }
 }
 
+@media screen and (min-width: 280px) {
+
+  mat-toolbar{
+    border-radius: 50px 50px 0 0 ;
+  }
+
+
+}
+
+@media screen and (min-width: 1024px){
+  mat-toolbar{
+    border-radius: 0;
+  }
+  }
+
 @media screen and (max-width: 378px) {
 
   .login-btn, .signin-btn{
